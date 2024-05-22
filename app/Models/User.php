@@ -22,6 +22,7 @@ class User extends Authenticatable
         'username',
         'email',
         'avatar',
+        'token'
     ];
 
     /**
@@ -29,12 +30,16 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $hidden = [];
+    protected $hidden = [
+        'token'
+    ];
 
     /**
      * The attributes that should be cast.
      *
      * @var array<string, string>
      */
-    protected $casts = [];
+    protected $casts = [
+        'token' => 'encrypted'
+    ];
 }
